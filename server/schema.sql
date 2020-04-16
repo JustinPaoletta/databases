@@ -1,4 +1,4 @@
--- DROP TABLE IF EXISTS chat;
+DROP DATABASE IF EXISTS chat;
 
 CREATE DATABASE chat;
 
@@ -16,13 +16,15 @@ CREATE TABLE messages (
 
 CREATE TABLE users (
   ID INT NOT NULL AUTO_INCREMENT,
-  Name VARCHAR(30) NOT NULL,
+  username VARCHAR(30) NOT NULL,
   PRIMARY KEY(ID)
 );
 
 ALTER TABLE messages ADD FOREIGN KEY(UserID) REFERENCES users(ID);
 
 /* Create other tables and define schemas for them here! */
+
+-- INSERT INTO messages (message) VALUES ("good afternoon");
 
 
 
