@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS chat;
+DROP DATABASE if exists chat;
 
 CREATE DATABASE chat;
 
@@ -9,8 +9,8 @@ CREATE TABLE messages (
   MessageID INT NOT NULL AUTO_INCREMENT,
   Message_text VARCHAR(255),
   Created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  UserID INT,
   Rooms VARCHAR(255),
+  UserID INT NOT NULL,
   PRIMARY KEY (MessageID)
 );
 
@@ -20,12 +20,9 @@ CREATE TABLE users (
   PRIMARY KEY(ID)
 );
 
-ALTER TABLE messages ADD FOREIGN KEY(UserID) REFERENCES users(ID);
+-- ALTER TABLE messages ADD FOREIGN KEY(UserID) REFERENCES users(ID);
 
 /* Create other tables and define schemas for them here! */
-
--- INSERT INTO messages (message) VALUES ("good afternoon");
-
 
 
 /*  Execute this file from the command line by typing:
